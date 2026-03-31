@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Premium fashion destination - Modern, minimalist clothing for men, women, and kids">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>MODERNSTYLE | Premium Fashion</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="product-card.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="home.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">FYNN<span>SHII</span></a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item has-mega">
+                        <a href="products.html?category=men">Men</a>
+                        <div class="mega-menu">
+                            <div class="mega-container">
+                                <div class="mega-column">
+                                    <h4>Clothing</h4>
+                                    <ul>
+                                        <li><a href="products.html?category=men&subcategory=shirts">Shirts</a></li>
+                                        <li><a href="products.html?category=men&subcategory=pants">Pants</a></li>
+                                        <li><a href="products.html?category=men&subcategory=outerwear">Outerwear</a></li>
+                                        <li><a href="products.html?category=men&subcategory=suits">Suits</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4>Footwear</h4>
+                                    <ul>
+                                        <li><a href="products.html?category=men&subcategory=sneakers">Sneakers</a></li>
+                                        <li><a href="products.html?category=men&subcategory=loafers">Loafers</a></li>
+                                        <li><a href="products.html?category=men&subcategory=boots">Boots</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4>Accessories</h4>
+                                    <ul>
+                                        <li><a href="products.html?category=men&subcategory=watches">Watches</a></li>
+                                        <li><a href="products.html?category=men&subcategory=belts">Belts</a></li>
+                                        <li><a href="products.html?category=men&subcategory=wallets">Wallets</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-featured">
+                                    <img src="https://placehold.co/400x300/2c5f2d/white?text=New+Collection" alt="New Collection">
+                                    <h4>Summer Collection 2024</h4>
+                                    <a href="products.html?new=true" class="btn-link">Shop Now →</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item has-mega">
+                        <a href="products.html?category=women">Women</a>
+                        <div class="mega-menu">
+                            <div class="mega-container">
+                                <div class="mega-column">
+                                    <h4>Clothing</h4>
+                                    <ul>
+                                        <li><a href="products.html?category=women&subcategory=dresses">Dresses</a></li>
+                                        <li><a href="products.html?category=women&subcategory=tops">Tops</a></li>
+                                        <li><a href="products.html?category=women&subcategory=bottoms">Bottoms</a></li>
+                                        <li><a href="products.html?category=women&subcategory=outerwear">Outerwear</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4>Footwear</h4>
+                                    <ul>
+                                        <li><a href="/pages/products.html?category=women&subcategory=heels">Heels</a></li>
+                                        <li><a href="/pages/products.html?category=women&subcategory=flats">Flats</a></li>
+                                        <li><a href="/pages/products.html?category=women&subcategory=boots">Boots</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4>Accessories</h4>
+                                    <ul>
+                                        <li><a href="/pages/products.html?category=women&subcategory=jewelry">Jewelry</a></li>
+                                        <li><a href="/pages/products.html?category=women&subcategory=bags">Bags</a></li>
+                                        <li><a href="/pages/products.html?category=women&subcategory=scarves">Scarves</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html?category=kids">Kids</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html?sale=true" class="sale-link">Sale</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="icon-btn search-toggle" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="icon-btn wishlist-toggle" aria-label="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="badge wishlist-count">0</span>
+                </button>
+                <button class="icon-btn cart-toggle" aria-label="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="badge cart-count">0</span>
+                </button>
+                <button class="icon-btn user-toggle" aria-label="Account">
+                    <i class="far fa-user"></i>
+                </button>
+                <!-- Dark Mode Toggle Button -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for products..." autocomplete="off">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="close-search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-suggestions"></div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero">
+            <div class="hero-slider">
+                <div class="hero-slide active">
+                    <div class="hero-bg" style="background-image: url('hero1.jpg')"></div>
+                    <div class="hero-content">
+                        <span class="hero-tag">New Collection</span>
+                        <h1>Elevate Your Style</h1>
+                        <p>Discover the latest trends in sustainable fashion</p>
+                        <a href="products.html?new=true" class="btn-primary">Shop Now →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Featured Categories -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Shop by Category</h2>
+                <div class="categories-grid">
+                    <a href="products.html?category=men" class="category-card">
+                        <div class="category-image">
+                            <img src="model.jpg" alt="Men's Fashion">
+                        </div>
+                        <h3>Men</h3>
+                        <p>Explore Collection →</p>
+                    </a>
+                    <a href="products.html?category=women" class="category-card">
+                        <div class="category-image">
+                            <img src="model1.jpg" alt="Women's Fashion">
+                        </div>
+                        <h3>Women</h3>
+                        <p>Explore Collection →</p>
+                    </a>
+                    <a href="products.html?category=kids" class="category-card">
+                        <div class="category-image">
+                            <img src="model3.jpg" alt="Kids' Fashion">
+                        </div>
+                        <h3>Kids</h3>
+                        <p>Explore Collection →</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Best Sellers -->
+        <section class="products-section">
+            <div class="container">
+                <h2 class="section-title">Best Sellers</h2>
+                <div class="products-grid" id="best-sellers-grid">
+                    <!-- Products will be loaded dynamically -->
+                     <div class="category-image">
+                            <img src="model3.jpg" alt="Kids' Fashion">
+                        </div>
+                     <div class="category-image">
+                            <img src="model1.jpg" alt="Kids' Fashion">
+                        </div><div class="category-image">
+                            <img src="model.jpg" alt="Kids' Fashion">
+                        </div>   
+                        <div class="category-image">
+                            <img src="sanina.jpg" alt="Kids' Fashion">
+                        </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Lifestyle Banner -->
+        <section class="lifestyle-banner">
+            <div class="banner-content">
+                <h2>Sustainable Fashion for a Better Future</h2>
+                <p>Made with 100% organic materials and ethical practices</p>
+                <a href="sustainability.html" class="btn-outline">Learn More →</a>
+            </div>
+        </section>
+        
+        <!-- New Collection -->
+        <section class="products-section">
+            <div class="container">
+                <h2 class="section-title">New Collection</h2>
+                <div class="products-grid" id="new-collection-grid">
+                    <!-- Products will be loaded dynamically -->
+                     <div class="category-image">
+                            <img src="sanina.jpg" alt="Kids' Fashion">
+                        </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Limited Offers -->
+        <section class="offers-section">
+            <div class="container">
+                <h2 class="section-title">Limited Time Offers</h2>
+                <div class="offers-grid" id="offers-grid">
+                    <!-- Offers will be loaded dynamically -->
+                     <div class="category-image">
+                            <img src="sanina.jpg" alt="Kids' Fashion">
+                        </div>
+                            <div class="category-image">
+                                <img src="model.jpg" alt="Kids' Fashion">
+                        <div class="category-image">
+                            <img src="model4.jpg" alt="Kids' Fashion">
+                        </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Subscribe to Our Newsletter</h2>
+                    <p>Get 10% off your first purchase and stay updated with our latest collections</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>MODERNSTYLE</h4>
+                    <p>Premium fashion for the modern individual. Sustainable, ethical, and timeless.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="products.html?category=men">Men</a></li>
+                        <li><a href="products.html?category=women">Women</a></li>
+                        <li><a href="products.html?category=kids">Kids</a></li>
+                        <li><a href="products.html?sale=true">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="shipping.html">Shipping Info</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="stores.html">Store Locator</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FYN SHII. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="drawer-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-drawer"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="drawer-content" id="cart-items-container">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <button class="btn-primary continue-shopping">Continue Shopping</button>
+            </div>
+        </div>
+        <div class="drawer-footer">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <button class="btn-primary checkout-btn">Checkout</button>
+        </div>
+    </div>
+    
+    <!-- Auth Modal -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="auth-modal-title">Sign In</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="login-form" class="auth-form active">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Sign In</button>
+                    <p class="auth-switch">Don't have an account? <a href="#" id="show-register">Sign Up</a></p>
+                </form>
+                <form id="register-form" class="auth-form">
+                    <input type="text" placeholder="First Name">
+                    <input type="text" placeholder="Last Name">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Confirm Password" required>
+                    <button type="submit">Create Account</button>
+                    <p class="auth-switch">Already have an account? <a href="#" id="show-login">Sign In</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+    <script src="client.js"></script>
+    <script src="auth.js"></script>
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+    <script src="header.js"></script>
+    <script src="productCard.js"></script>
+    <script src="cartDrawer.js"></script>
+    <script src="state.js"></script>
+    <script src="actions.js"></script>
+</body>
+</html>

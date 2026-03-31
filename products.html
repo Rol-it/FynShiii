@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | MODERNSTYLE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="product-card.css">
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header (same as index) -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">FYN<span>SHII</span></a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="products.html?category=men">Men</a></li>
+                    <li class="nav-item"><a href="products.html?category=women">Women</a></li>
+                    <li class="nav-item"><a href="products.html?category=kids">Kids</a></li>
+                    <li class="nav-item"><a href="products.html?sale=true" class="sale-link">Sale</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn search-toggle"><i class="fas fa-search"></i></button>
+                <button class="icon-btn wishlist-toggle"><i class="far fa-heart"></i><span class="badge wishlist-count">0</span></button>
+                <button class="icon-btn cart-toggle"><i class="fas fa-shopping-bag"></i><span class="badge cart-count">0</span></button>
+                <button class="icon-btn user-toggle"><i class="far fa-user"></i></button>
+            </div>
+        </div>
+        <div class="search-bar">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for products...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <button class="close-search"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="products-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <h3>Filters</h3>
+                    
+                    <div class="filter-section">
+                        <h4>Categories</h4>
+                        <div class="filter-options" id="category-filters">
+                            <!-- Categories loaded dynamically -->
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Price</h4>
+                        <div class="price-range">
+                            <input type="range" id="price-min" min="0" max="500" step="10">
+                            <input type="range" id="price-max" min="0" max="500" step="10">
+                            <div class="price-values">
+                                <span>$<span id="min-price-display">0</span></span>
+                                <span>-</span>
+                                <span>$<span id="max-price-display">500</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Sizes</h4>
+                        <div class="filter-options size-options" id="size-filters">
+                            <!-- Sizes loaded dynamically -->
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Colors</h4>
+                        <div class="filter-options color-options" id="color-filters">
+                            <!-- Colors loaded dynamically -->
+                        </div>
+                    </div>
+                    
+                    <button class="btn-secondary clear-filters" id="clear-filters">Clear All Filters</button>
+                </aside>
+                
+                <!-- Products Grid -->
+                <div class="products-main">
+                    <div class="products-header">
+                        <h1 id="category-title">All Products</h1>
+                        <div class="sort-options">
+                            <label for="sort">Sort by:</label>
+                            <select id="sort">
+                                <option value="created_at DESC">Newest</option>
+                                <option value="price ASC">Price: Low to High</option>
+                                <option value="price DESC">Price: High to Low</option>
+                                <option value="name ASC">Name: A to Z</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="products-grid" id="products-grid">
+                        <!-- Products loaded dynamically -->
+                    </div>
+                    
+                    <div class="pagination" id="pagination">
+                        <!-- Pagination loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer (same as index) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>MODERNSTYLE</h4>
+                    <p>Premium fashion for the modern individual.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="products.html?category=men">Men</a></li>
+                        <li><a href="products.html?category=women">Women</a></li>
+                        <li><a href="products.html?category=kids">Kids</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="shipping.html">Shipping</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MODERNSTYLE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="drawer-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-drawer"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="drawer-content" id="cart-items-container">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="drawer-footer">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <button class="btn-primary checkout-btn">Checkout</button>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+    <script src="client.js"></script>
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+    <script src="productCard.js"></script>
+    <script src="productsPage.js"></script>
+</body>
+</html>
