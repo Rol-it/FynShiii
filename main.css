@@ -102,23 +102,6 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Force background color changes for all major elements */
-html,
-body,
-.header,
-.categories,
-.products-section,
-.offers-section,
-.newsletter,
-.footer,
-.cart-drawer,
-.modal-content,
-.search-bar,
-.mega-menu,
-.filters-sidebar {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
 /* Container */
 .container {
     max-width: 1280px;
@@ -639,14 +622,15 @@ h4 {
 }
 
 .category-image {
-    border-radius: 12px;
+    width: 100%;
     overflow: hidden;
-    margin-bottom: 1.5rem;
+    border-radius: 12px;
 }
 
 .category-image img {
     width: 100%;
     height: auto;
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
@@ -655,11 +639,14 @@ h4 {
 }
 
 .category-card h3 {
-    margin-bottom: 0.5rem;
+    margin: 1rem 0 0.5rem;
+    padding: 0 1rem;
     color: var(--text-primary);
+    font-size: 1.25rem;
 }
 
 .category-card p {
+    padding: 0 1rem 1rem;
     color: var(--color-primary);
     font-weight: 500;
 }
@@ -694,6 +681,7 @@ h4 {
 
 .product-image {
     position: relative;
+    width: 100%;
     padding-bottom: 125%;
     overflow: hidden;
     background: var(--bg-secondary);
@@ -774,18 +762,20 @@ h4 {
     font-weight: 500;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
+    font-size: 1rem;
 }
 
 .product-price {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
 }
 
 .current-price {
     font-weight: 600;
     color: var(--color-primary);
+    font-size: 1rem;
 }
 
 .original-price {
@@ -796,7 +786,7 @@ h4 {
 
 /* Lifestyle Banner */
 .lifestyle-banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero1.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x600/2c5f2d/white?text=Sustainable+Fashion');
     background-size: cover;
     background-position: center;
     padding: 6rem 0;
@@ -957,10 +947,16 @@ h4 {
     color: var(--color-gray-400);
     text-decoration: none;
     transition: var(--transition);
+    font-size: 0.875rem;
 }
 
 .footer-column ul li a:hover {
     color: var(--color-primary);
+}
+
+.footer-column p {
+    font-size: 0.875rem;
+    line-height: 1.6;
 }
 
 .social-links {
@@ -988,6 +984,10 @@ h4 {
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+.footer-bottom p {
+    font-size: 0.75rem;
 }
 
 .payment-methods {
@@ -1102,6 +1102,7 @@ h4 {
     font-weight: 500;
     margin-bottom: 0.25rem;
     color: var(--text-primary);
+    font-size: 0.9rem;
 }
 
 .cart-item-variant {
@@ -1113,6 +1114,7 @@ h4 {
 .cart-item-price {
     font-weight: 600;
     color: var(--color-primary);
+    font-size: 0.9rem;
 }
 
 .cart-item-quantity {
@@ -1131,6 +1133,9 @@ h4 {
     cursor: pointer;
     transition: var(--transition);
     color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .quantity-btn:hover {
@@ -1427,7 +1432,7 @@ h4 {
     color: var(--text-primary);
     cursor: pointer;
     appearance: none;
-    background-image: url("hero1.jpg");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 0.5rem center;
 }
@@ -1519,7 +1524,7 @@ h4 {
 .sustainability-hero {
     height: 60vh;
     min-height: 500px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero1.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080/2c5f2d/white?text=Sustainable+Fashion');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1901,9 +1906,10 @@ h4 {
 
 .team-member img {
     width: 100%;
-    max-width: 250px;
+    max-width: 200px;
+    height: auto;
     border-radius: 50%;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
 }
@@ -1989,6 +1995,34 @@ h4 {
     box-shadow: var(--shadow-sm);
 }
 
+/* CTA Section */
+.cta {
+    padding: 5rem 0;
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.cta h2 {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta .btn-primary {
+    background: var(--color-white);
+    color: var(--color-primary);
+}
+
+.cta .btn-primary:hover {
+    background: var(--color-gray-100);
+    transform: translateY(-2px);
+}
+
 /* Loading States */
 .loader {
     display: inline-block;
@@ -1998,12 +2032,6 @@ h4 {
     border-top-color: var(--color-primary);
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
 }
 
 @keyframes spin {
@@ -2094,6 +2122,11 @@ h4 {
 
 /* Mobile Devices (320px - 480px) */
 @media (max-width: 480px) {
+    /* Container */
+    .container {
+        padding: 0 16px !important;
+    }
+    
     /* Typography */
     h1 {
         font-size: 1.75rem !important;
@@ -2101,35 +2134,31 @@ h4 {
     }
     
     h2 {
-        font-size: 1.5rem !important;
+        font-size: 1.35rem !important;
         margin-bottom: 1rem !important;
     }
     
     h3 {
-        font-size: 1.25rem !important;
-    }
-    
-    p {
-        font-size: 0.875rem !important;
+        font-size: 1.1rem !important;
     }
     
     .section-title {
-        font-size: 1.5rem !important;
+        font-size: 1.35rem !important;
         margin-bottom: 1.5rem !important;
     }
     
-    /* Container */
-    .container {
-        padding: 0 16px !important;
+    .section-title::after {
+        width: 40px;
+        height: 2px;
     }
     
     /* Header */
     .header-container {
-        padding: 0.75rem 1rem !important;
+        padding: 0.6rem 1rem !important;
     }
     
     .logo a {
-        font-size: 1.25rem !important;
+        font-size: 1.1rem !important;
     }
     
     .main-nav {
@@ -2142,29 +2171,29 @@ h4 {
     }
     
     .header-actions {
-        gap: 0.25rem !important;
+        gap: 0.15rem !important;
     }
     
     .icon-btn {
         padding: 6px !important;
-        font-size: 1rem !important;
+        font-size: 0.9rem !important;
     }
     
     .theme-toggle {
         width: 32px !important;
         height: 32px !important;
-        font-size: 1rem !important;
+        font-size: 0.9rem !important;
     }
     
     .badge {
-        font-size: 0.6rem !important;
-        padding: 1px 4px !important;
+        font-size: 0.55rem !important;
+        padding: 1px 3px !important;
     }
     
-    /* Hero */
+    /* Hero Section - Smaller on mobile */
     .hero {
         height: 50vh !important;
-        min-height: 400px !important;
+        min-height: 320px !important;
     }
     
     .hero-content {
@@ -2173,32 +2202,59 @@ h4 {
     }
     
     .hero-tag {
-        font-size: 0.7rem !important;
-        padding: 0.25rem 0.75rem !important;
+        font-size: 0.65rem !important;
+        padding: 0.2rem 0.6rem !important;
+        margin-bottom: 0.75rem !important;
     }
     
     .hero-content h1 {
-        font-size: 1.75rem !important;
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
     }
     
-    /* Categories */
+    .hero-content p {
+        font-size: 0.8rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .hero-content .btn-primary {
+        padding: 8px 20px !important;
+        font-size: 0.8rem !important;
+    }
+    
+    /* Categories - Smaller images */
     .categories {
         padding: 2rem 0 !important;
     }
     
     .categories-grid {
         grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
+        gap: 1.2rem !important;
     }
     
-    /* Products Grid */
+    .category-image img {
+        max-height: 160px !important;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .category-card h3 {
+        font-size: 1rem !important;
+        margin: 0.75rem 0 0.25rem !important;
+    }
+    
+    .category-card p {
+        font-size: 0.8rem !important;
+    }
+    
+    /* Products Grid - 2 columns with smaller images */
     .products-section {
         padding: 2rem 0 !important;
     }
     
     .products-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 1rem !important;
+        gap: 0.8rem !important;
     }
     
     .product-image {
@@ -2206,32 +2262,46 @@ h4 {
     }
     
     .product-info {
-        padding: 0.75rem !important;
+        padding: 0.6rem !important;
     }
     
     .product-name {
-        font-size: 0.875rem !important;
+        font-size: 0.7rem !important;
+        margin-bottom: 0.25rem !important;
     }
     
-    .product-actions {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
+    .current-price {
+        font-size: 0.75rem !important;
+    }
+    
+    .original-price {
+        font-size: 0.6rem !important;
+    }
+    
+    .product-badge {
+        font-size: 0.55rem !important;
+        padding: 0.15rem 0.45rem !important;
+        top: 0.4rem !important;
+        left: 0.4rem !important;
     }
     
     .product-action-btn {
-        width: 28px !important;
-        height: 28px !important;
-        font-size: 0.75rem !important;
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 0.65rem !important;
     }
     
     /* Lifestyle Banner */
     .lifestyle-banner {
-        padding: 3rem 0 !important;
-        background-attachment: scroll !important;
+        padding: 2rem 0 !important;
     }
     
     .lifestyle-banner h2 {
-        font-size: 1.25rem !important;
+        font-size: 1.2rem !important;
+    }
+    
+    .lifestyle-banner p {
+        font-size: 0.8rem !important;
     }
     
     /* Offers */
@@ -2241,12 +2311,24 @@ h4 {
     
     .offers-grid {
         grid-template-columns: 1fr !important;
-        gap: 1rem !important;
+        gap: 0.8rem !important;
     }
     
     .offer-card {
         padding: 1rem !important;
-        gap: 1rem !important;
+        gap: 0.75rem !important;
+    }
+    
+    .offer-icon {
+        font-size: 1.5rem !important;
+    }
+    
+    .offer-content h3 {
+        font-size: 0.9rem !important;
+    }
+    
+    .offer-content p {
+        font-size: 0.7rem !important;
     }
     
     /* Newsletter */
@@ -2254,20 +2336,40 @@ h4 {
         padding: 2rem 0 !important;
     }
     
+    .newsletter-content h2 {
+        font-size: 1.2rem !important;
+    }
+    
     .newsletter-form {
         flex-direction: column !important;
-        gap: 0.75rem !important;
+        gap: 0.6rem !important;
+    }
+    
+    .newsletter-form input,
+    .newsletter-form button {
+        padding: 8px 16px !important;
+        font-size: 0.8rem !important;
     }
     
     /* Footer */
     .footer {
-        padding: 2rem 0 1rem !important;
+        padding: 1.5rem 0 1rem !important;
     }
     
     .footer-grid {
         grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
+        gap: 1.2rem !important;
         text-align: center !important;
+    }
+    
+    .footer-column h4 {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .footer-column p,
+    .footer-column ul li a {
+        font-size: 0.75rem !important;
     }
     
     .social-links {
@@ -2277,6 +2379,17 @@ h4 {
     .footer-bottom {
         flex-direction: column !important;
         text-align: center !important;
+        gap: 0.5rem !important;
+        padding-top: 1rem !important;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.65rem !important;
+    }
+    
+    .payment-methods {
+        font-size: 1rem !important;
+        gap: 0.6rem !important;
     }
     
     /* Cart Drawer */
@@ -2285,13 +2398,49 @@ h4 {
         right: -100% !important;
     }
     
-    .cart-drawer.open {
-        right: 0 !important;
+    .drawer-header {
+        padding: 0.8rem !important;
+    }
+    
+    .drawer-header h3 {
+        font-size: 1rem !important;
+    }
+    
+    .drawer-content {
+        padding: 0.8rem !important;
+    }
+    
+    .cart-item {
+        gap: 0.6rem !important;
+        margin-bottom: 0.6rem !important;
+        padding-bottom: 0.6rem !important;
     }
     
     .cart-item-image {
-        width: 60px !important;
-        height: 60px !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    .cart-item-name {
+        font-size: 0.7rem !important;
+    }
+    
+    .cart-item-variant {
+        font-size: 0.55rem !important;
+    }
+    
+    .cart-item-price {
+        font-size: 0.7rem !important;
+    }
+    
+    .quantity-btn {
+        width: 22px !important;
+        height: 22px !important;
+        font-size: 0.6rem !important;
+    }
+    
+    .drawer-footer {
+        padding: 0.8rem !important;
     }
     
     /* Products Page */
@@ -2305,7 +2454,7 @@ h4 {
         position: fixed !important;
         top: 0;
         left: -100%;
-        width: 80% !important;
+        width: 85% !important;
         height: 100vh;
         background: var(--bg-primary);
         z-index: 1000;
@@ -2320,11 +2469,19 @@ h4 {
     
     .filter-toggle-btn {
         display: flex !important;
+        padding: 10px !important;
+        font-size: 0.8rem !important;
     }
     
     .products-header {
         flex-direction: column !important;
         align-items: flex-start !important;
+        gap: 0.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .products-header h1 {
+        font-size: 1.2rem !important;
     }
     
     .sort-options {
@@ -2333,112 +2490,171 @@ h4 {
     
     .sort-options select {
         width: 100% !important;
+        padding: 8px !important;
+        font-size: 0.8rem !important;
     }
     
     /* Sustainability Page */
     .sustainability-hero {
-        height: 40vh !important;
-        min-height: 300px !important;
+        height: 35vh !important;
+        min-height: 250px !important;
     }
     
     .sustainability-hero h1 {
-        font-size: 1.5rem !important;
+        font-size: 1.3rem !important;
     }
     
     .our-promise {
-        padding: 2rem 0 !important;
+        padding: 1.5rem 0 !important;
+    }
+    
+    .promise-header p {
+        font-size: 0.8rem !important;
     }
     
     .promise-grid {
         grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .promise-card {
+        padding: 1rem !important;
+    }
+    
+    .promise-card i {
+        font-size: 1.8rem !important;
+    }
+    
+    .promise-card h3 {
+        font-size: 1rem !important;
     }
     
     .materials {
-        padding: 2rem 0 !important;
+        padding: 1.5rem 0 !important;
     }
     
     .materials-grid {
         grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .material-card img {
+        height: 140px !important;
     }
     
     .stats-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
     }
     
     .stat-number {
-        font-size: 2rem !important;
+        font-size: 1.5rem !important;
     }
     
-    .transparency-features {
-        grid-template-columns: 1fr !important;
-    }
-    
-    .cert-grid {
-        grid-template-columns: 1fr !important;
+    .stat-card p {
+        font-size: 0.7rem !important;
     }
     
     .takeback {
-        padding: 2rem 0 !important;
+        padding: 1.5rem 0 !important;
     }
     
     .takeback-content {
         grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
+        gap: 1rem !important;
         text-align: center !important;
+    }
+    
+    .takeback-text h2 {
+        font-size: 1.2rem !important;
     }
     
     /* About Page */
     .about-hero {
-        height: 40vh !important;
-        min-height: 300px !important;
+        height: 35vh !important;
+        min-height: 250px !important;
     }
     
     .about-hero h1 {
-        font-size: 1.75rem !important;
+        font-size: 1.5rem !important;
     }
     
     .our-story {
-        padding: 2rem 0 !important;
+        padding: 1.5rem 0 !important;
     }
     
     .story-grid {
         grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
+        gap: 1rem !important;
+    }
+    
+    .story-text h2 {
+        font-size: 1.2rem !important;
     }
     
     .values {
-        padding: 2rem 0 !important;
+        padding: 1.5rem 0 !important;
     }
     
     .values-grid {
         grid-template-columns: 1fr !important;
+        gap: 1rem !important;
     }
     
     .team {
-        padding: 2rem 0 !important;
+        padding: 1.5rem 0 !important;
     }
     
     .team-grid {
         grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .team-member img {
+        max-width: 120px !important;
+    }
+    
+    .milestones {
+        padding: 1.5rem 0 !important;
     }
     
     .timeline::before {
-        left: 20px !important;
+        left: 15px !important;
     }
     
     .timeline-item {
+        margin-left: 15px !important;
+        margin-bottom: 1.5rem !important;
         flex-direction: column !important;
         align-items: flex-start !important;
-        margin-left: 20px !important;
     }
     
     .timeline-year {
+        font-size: 0.7rem !important;
+        padding: 0.25rem 0.75rem !important;
+        width: 70px !important;
         margin-bottom: 0.5rem !important;
     }
     
     .timeline-content {
         width: 100% !important;
+        margin-left: 0 !important;
+    }
+    
+    .timeline-content h3 {
+        font-size: 0.9rem !important;
+    }
+    
+    .timeline-content p {
+        font-size: 0.75rem !important;
+    }
+    
+    .cta {
+        padding: 1.5rem 0 !important;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.2rem !important;
     }
     
     /* Touch-friendly buttons */
@@ -2448,16 +2664,16 @@ h4 {
     .icon-btn,
     .product-action-btn,
     .quantity-btn {
-        min-height: 44px !important;
-        min-width: 44px !important;
+        min-height: 40px !important;
+        min-width: 40px !important;
     }
     
     .product-action-btn {
-        min-height: 32px !important;
-        min-width: 32px !important;
+        min-height: 28px !important;
+        min-width: 28px !important;
     }
     
-    /* Utility classes */
+    /* Hide desktop elements */
     .desktop-only {
         display: none !important;
     }
@@ -2474,91 +2690,106 @@ h4 {
     }
     
     h1 {
-        font-size: 2.5rem !important;
+        font-size: 2rem !important;
     }
     
     h2 {
-        font-size: 1.75rem !important;
+        font-size: 1.5rem !important;
     }
     
     .categories-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 1.5rem !important;
+        gap: 1.2rem !important;
+    }
+    
+    .category-image img {
+        max-height: 180px !important;
     }
     
     .products-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 1.5rem !important;
+        gap: 1.2rem !important;
     }
     
     .offers-grid {
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.2rem !important;
     }
     
     .footer-grid {
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
     }
     
     .hero {
-        height: 60vh !important;
+        height: 55vh !important;
     }
     
     .hero-content h1 {
-        font-size: 2.5rem !important;
-    }
-    
-    .products-layout {
-        grid-template-columns: 250px 1fr !important;
-        gap: 1.5rem !important;
+        font-size: 2rem !important;
     }
     
     .materials-grid {
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.2rem !important;
     }
     
     .stats-grid {
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
     }
     
     .team-grid {
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
     }
     
     .promise-grid {
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.2rem !important;
     }
     
     .values-grid {
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.2rem !important;
+    }
+    
+    .products-layout {
+        grid-template-columns: 240px 1fr !important;
+        gap: 1.2rem !important;
     }
 }
 
 /* Desktop Devices (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     .container {
-        max-width: 90%;
+        max-width: 95%;
         padding: 0 24px;
     }
     
     .products-grid {
         grid-template-columns: repeat(3, 1fr) !important;
-        gap: 1.5rem !important;
+        gap: 1.2rem !important;
     }
     
     .categories-grid {
         grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1.5rem !important;
     }
     
     .offers-grid {
         grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1.5rem !important;
     }
     
     .materials-grid {
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
     }
     
     .team-grid {
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
     }
 }
 
@@ -2571,6 +2802,16 @@ h4 {
     
     .products-grid {
         grid-template-columns: repeat(4, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+    
+    .categories-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 2rem !important;
+    }
+    
+    .offers-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
         gap: 2rem !important;
     }
 }
@@ -2598,8 +2839,8 @@ img, picture, video, canvas, svg {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -2608,7 +2849,7 @@ img, picture, video, canvas, svg {
 
 ::-webkit-scrollbar-thumb {
     background: var(--border-color);
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
